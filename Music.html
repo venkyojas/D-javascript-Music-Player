@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Album</title>
+    <link rel="stylesheet" type="text/css" href="menubar.css">
+    <script type="text/javascript" src="./JSONDATA.js"></script>
+    <script type="text/javascript" src="./Album.js"></script>
+</head>
+
+<body>
+    <form>
+        <div class="navbar">
+            <h1><span>A</span>lbu<span>m A</span>ppl<span>ica</span>tion</h1>
+            <ul>
+                <li><a href="#">Album</a>
+                    <select id="album" onchange="GetSelectedAlbum(this.options[this.selectedIndex].value)">
+                    </select></li>
+
+
+                <li><a href="#">Title</a>
+                    <select id="title" onchange="GetSelectedTitle(this.options[this.selectedIndex].value)">
+                    </select></li>
+
+
+                <li><a href="#">Artist</a>
+                    <select id="artist" onchange="GetSelectedArtist(this.options[this.selectedIndex].value)">
+                    </select></li>
+
+
+                <li><a href="#">Genre</a>
+                    <select id="genre" onchange="GetSelectedGenre(this.options[this.selectedIndex].value)">
+                    </select></li>
+
+                <li><a href="#">List</a>
+                    <select id="list" onchange="GetAlbumsLists(this.options[this.selectedIndex].value)">
+                        <option>--select--</option>
+                        <option>Album List</option>
+                        <option>Title List</option>
+                        <option>Artist List</option>
+                        <option>Genre List</option>
+                    </select></li>
+                <p id="result"></p>
+                <p id="result1"></p>
+            </ul>
+        </div>
+    </form>
+</body>
+<!-- <script type="text/javascript" src="./AlbumDynamicStyle.js"></script> -->
+<script>
+    options1 = '';
+    options1 += "<option>" + "-select-" + "</option>";
+    for (i of album) {
+        options1 += "<option>" + i.album_name + "</option>";
+    }
+    document.getElementById('album').innerHTML = options1;
+
+    options2 = '';
+    options2 += "<option>" + "-select-" + "</option>";
+    for (i of title) {
+        options2 += "<option>" + i.title_name + "</option>";
+    }
+    document.getElementById('title').innerHTML = options2;
+
+    options3 = '';
+    options3 += "<option>" + "-select-" + "</option>";
+    for (i of artist) {
+        options3 += "<option>" + i.artist_name + "</option>";
+    }
+    document.getElementById('artist').innerHTML = options3;
+
+    options4 = '';
+    options4 += "<option>" + "-select-" + "</option>";
+    for (i of genre) {
+        options4 += "<option>" + i.genre_name + "</option>";
+    }
+    document.getElementById('genre').innerHTML = options4;
+
+</script>
+
+</html>
+<html>
